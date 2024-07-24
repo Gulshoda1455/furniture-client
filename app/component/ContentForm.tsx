@@ -5,23 +5,10 @@ import { redirect } from 'next/navigation'
 
 export default function ContactForm(){
 
-    const [form, setForm] = useState({name:"", email:"", subject:"" , message:""})
-    
-
-    const handleChange =(e)=>{
-        const {name, value}=e.target;
-        setForm((prevForm)=>({...prevForm, [name]:value}))
-    }
+   
 
 
-    const handleSubmit=()=>{
-        const {name, email,subject,message} = form;
-        if(name && email && subject && message){
-              redirect('/page/Home')
-        }else{
-            alert("Iltimos barcha maydonlarni toldiring!")
-        }
-    }
+  
     
     return (
         <div >
@@ -32,7 +19,7 @@ export default function ContactForm(){
                        type="text" 
                        
                        placeholder='Abc'
-                       onChange={handleChange} 
+                       
                        className='bg-gray-50 w-[500px] border border-gray-300 text-gray-900 text-sm rounded-lg   p-5 dark:bg-gray-700 dark:border-gray-600  dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' />
                    </label>
                    
@@ -43,7 +30,7 @@ export default function ContactForm(){
                       <input
                        type="text" 
                        placeholder='Abc@def.com'
-                       onChange={handleChange}  
+                       
                        className='bg-gray-50 w-[500px] border border-gray-300 text-gray-900 text-sm rounded-lg   p-5 dark:bg-gray-700 dark:border-gray-600  dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' />
                    </label>
                    
@@ -54,7 +41,7 @@ export default function ContactForm(){
                       <input 
                       type="text" 
                       placeholder='This is an optional'
-                      onChange={handleChange}  
+                      
                       className='bg-gray-50 w-[500px] border border-gray-300 text-gray-900 text-sm rounded-lg   p-5 dark:bg-gray-700 dark:border-gray-600  dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' />
                    </label>
                    
@@ -65,13 +52,13 @@ export default function ContactForm(){
                       <textarea 
                       rows={5}
                       
-                      onChange={handleChange}  
+                       
                       placeholder='Hi! i’d like to ask about'
                        className='bg-gray-50 w-[500px] border border-gray-300 text-gray-900 text-sm rounded-lg   p-10 dark:bg-gray-700 dark:border-gray-600  dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' />
                    </label>
                    
          </div>
-         <button onClick={handleSubmit} className='w-[237px] font-normal text-[16px] bg-[#B88E2F] py-[13px] text-white rounded-md mt-[49px]'>Submit</button>
+         <button  className='w-[237px] font-normal text-[16px] bg-[#B88E2F] py-[13px] text-white rounded-md mt-[49px]'>Submit</button>
                     
         </div>
     )
