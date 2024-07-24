@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
+import Link from "next/link";
+import Logo from "./image/siteLogo.svg";
+import Contact from "./image/contact.svg";
+import Lupa from "./image/search.svg";
+import Heart from "./image/heart.love.svg";
+import Korzinka from "./image/korzinkaFur.svg";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({ subsets: ["latin"] ,weight:"600"});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +23,93 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={poppins.className}>
+      <header className="p-5">
+            <div className="container">
+                <div className="flex items-center justify-between">
+                    <Image src={Logo} alt="logo" width={185} height={41} priority />
+                    <nav className="flex items-center justify-between gap-40">
+                        <ul className="flex items-center justify-between gap-10">
+                            <li>
+                               <Link href='/page/Home' className="Link" >Home</Link>
+                            </li>
+                            <li>
+                               <Link   href='/page/Shop' className="Link" >Shop</Link>
+                            </li>
+                            <li>
+                               <Link href='/page/Checkout' className="Link" >Checkout</Link>
+                            </li>
+                            <li>
+                               <Link href='/page/Contact' className="Link" >Contact</Link>
+                            </li>
+                        </ul>
+                        <div className="flex items-center justify-between gap-8 ">
+                            <a href="/">
+                                <Image src={Contact} alt="contact" />
+                             </a>
+                             <a href="/">
+                                <Image src={Lupa} alt="lupa" />
+                             </a>
+                             <a href="/">
+                                <Image src={Heart} alt="heart" />
+                             </a>
+                             <a href="/">
+                                <Image src={Korzinka} alt="korzinka" />
+                             </a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        {children}
+        <footer className='my-10'>
+           <div className="container">
+           <span className='absolute w-[95%] border-solid border-[1px] border-[rgb(217, 217, 217)] '></span>
+               <div className="footer flex items-start justify-between pb-[48px] pt-[48px]">
+                   <div className='w-[285px] '>
+                       <h2 className='font-bold size-[24px] mb-[50px]'>Funiro.</h2>
+                       <p className='font-normal text-[16px]  text-[rgb(159, 159, 159)]'>400 University Drive Suite 200 Coral Gables,</p>
+                       <p className='font-normal text-[16px]  text-[rgb(159, 159, 159)]'>FL 33134 USA</p>
+                   </div>
+                   <div>
+                       <h3 className='font-medium text-[16px] text-[#9F9F9F] mb-[50px]'>Links</h3>
+                       <ul >
+                       <li className="mb-[40px]">
+                               <Link href='/page/Home' className="LinkFooter" >Home</Link>
+                            </li>
+                            <li className="mb-[40px]">
+                               <Link   href='/page/Shop' className="LinkFooter" >Shop</Link>
+                            </li>
+                            <li className="mb-[40px]">
+                               <Link href='/page/Checkout' className="LinkFooter" >Checkout</Link>
+                            </li>
+                            <li className="mb-[40px]">
+                               <Link href='/page/Contact' className="LinkFooter" >Contact</Link>
+                            </li>
+                       </ul>
+                   </div>
+                   <div>
+                       <h3 className='font-medium text-[16px] text-[#9F9F9F] mb-[50px]'>Help</h3>
+                       <ul>
+                           <li className='font-medium text-[16px] mb-[40px]'>Payment Options</li>
+                           <li className='font-medium text-[16px] mb-[40px]'>Returns</li>
+                           <li className='font-medium text-[16px] mb-[40px]'>Privacy Policies</li>
+                       </ul>
+                   </div>
+                   <div>
+                       <h3 className='font-medium text-[16px] text-[#9F9F9F] mb-[50px]'>Newsletter</h3>
+                       <strong className='underline font-normal size-[14px] mr-5 text-[#9F9F9F]'>Enter Your Email Address</strong>
+                       <strong className='underline font-medium size-[14px] text-black'>SUBSCRIBE</strong>
+                   </div>
+                   
+               </div>
+               <span className='absolute w-[95%] border-solid border-[1px] border-[rgb(217, 217, 217)]'></span>
+               <div className='mt-[35px] '>
+               <strong className='font-normal size-[16px] text-black'>2023 furino. All rights reverved</strong>
+               </div>
+           </div>
+         </footer>
+        </body>
     </html>
   );
 }
