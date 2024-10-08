@@ -31,17 +31,12 @@ export default function RootLayout({
                     <nav className="flex items-center justify-between gap-40">
                         <ul className="flex items-center justify-between gap-10">
                             <li>
-                               <Link href='/page/Home' className="Link" >Home</Link>
+                               <Link href='/page/Home' className="Link" >Product</Link>
                             </li>
                             <li>
-                               <Link   href='/page/Shop' className="Link" >Shop</Link>
+                               <Link   href='/page/Users' className="Link" >Admin</Link>
                             </li>
-                            <li>
-                               <Link href='/page/Checkout' className="Link" >Checkout</Link>
-                            </li>
-                            <li>
-                               <Link href='/page/Contact' className="Link" >Contact</Link>
-                            </li>
+                           
                         </ul>
                         <div className="flex items-center justify-between gap-8 ">
                             <a href="/">
@@ -62,53 +57,7 @@ export default function RootLayout({
             </div>
         </header>
         {children}
-        <footer className='my-10'>
-           <div className="container">
-           <span className='absolute w-[95%] border-solid border-[1px] border-[rgb(217, 217, 217)] '></span>
-               <div className="footer flex items-start justify-between pb-[48px] pt-[48px]">
-                   <div className='w-[285px] '>
-                       <h2 className='font-bold size-[24px] mb-[50px]'>Funiro.</h2>
-                       <p className='font-normal text-[16px]  text-[rgb(159, 159, 159)]'>400 University Drive Suite 200 Coral Gables,</p>
-                       <p className='font-normal text-[16px]  text-[rgb(159, 159, 159)]'>FL 33134 USA</p>
-                   </div>
-                   <div>
-                       <h3 className='font-medium text-[16px] text-[#9F9F9F] mb-[50px]'>Links</h3>
-                       <ul >
-                       <li className="mb-[40px]">
-                               <Link href='/page/Home' className="LinkFooter" >Home</Link>
-                            </li>
-                            <li className="mb-[40px]">
-                               <Link   href='/page/Shop' className="LinkFooter" >Shop</Link>
-                            </li>
-                            <li className="mb-[40px]">
-                               <Link href='/page/Checkout' className="LinkFooter" >Checkout</Link>
-                            </li>
-                            <li className="mb-[40px]">
-                               <Link href='/page/Contact' className="LinkFooter" >Contact</Link>
-                            </li>
-                       </ul>
-                   </div>
-                   <div>
-                       <h3 className='font-medium text-[16px] text-[#9F9F9F] mb-[50px]'>Help</h3>
-                       <ul>
-                           <li className='font-medium text-[16px] mb-[40px]'>Payment Options</li>
-                           <li className='font-medium text-[16px] mb-[40px]'>Returns</li>
-                           <li className='font-medium text-[16px] mb-[40px]'>Privacy Policies</li>
-                       </ul>
-                   </div>
-                   <div>
-                       <h3 className='font-medium text-[16px] text-[#9F9F9F] mb-[50px]'>Newsletter</h3>
-                       <strong className='underline font-normal size-[14px] mr-5 text-[#9F9F9F]'>Enter Your Email Address</strong>
-                       <strong className='underline font-medium size-[14px] text-black'>SUBSCRIBE</strong>
-                   </div>
-                   
-               </div>
-               <span className='absolute w-[95%] border-solid border-[1px] border-[rgb(217, 217, 217)]'></span>
-               <div className='mt-[35px] '>
-               <strong className='font-normal size-[16px] text-black'>2023 furino. All rights reverved</strong>
-               </div>
-           </div>
-         </footer>
+      
         </body>
     </html>
   );

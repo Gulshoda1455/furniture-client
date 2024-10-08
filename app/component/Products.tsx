@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 async function getData(){
-    const res = await fetch("https://ecommerce-backend-fawn-eight.vercel.app/api/products");
+    const res = await fetch("https://fakestoreapi.com/products");
 
     if(!res.ok){
          throw new Error("Failed to fetch data");
